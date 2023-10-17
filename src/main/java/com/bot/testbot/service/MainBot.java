@@ -57,13 +57,9 @@ public class MainBot extends TelegramLongPollingBot{
             String messageText = update.getMessage().getText();
             long chatId = update.getMessage().getChatId();
 
-            switch (messageText){
-                case "/start":
-                    StartBot(chatId);
-                    break;
-                case "/test":
-                    Testing(chatId);
-                    break;
+            switch (messageText) {
+                case "/start" -> StartBot(chatId);
+                case "/test" -> Testing(chatId);
             }
         }
     }
