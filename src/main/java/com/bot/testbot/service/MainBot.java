@@ -1,5 +1,6 @@
-package com.bot.testbot;
+package com.bot.testbot.service;
 
+import com.bot.testbot.config.BotConfig;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -24,15 +25,15 @@ import java.util.List;
 @Component
 
 public class MainBot extends TelegramLongPollingBot{
-    @Value("${telegram.bot.name}")
-    private String botName;
-    @Value("${telegram.bot.token}")
-    private String botToken;
+
+    final BotConfig config;
 
 
-    public MainBot(){
+    public MainBot(BotConfig config){
 
-        List<BotCommand> listOfCommands=new ArrayList<>();
+        this.config=config;
+
+        /*List<BotCommand> listOfCommands=new ArrayList<>();
         listOfCommands.add(new BotCommand("/start","Старт"));
         listOfCommands.add(new BotCommand("/test","Тестирование"));
         try {
@@ -40,15 +41,15 @@ public class MainBot extends TelegramLongPollingBot{
         }
         catch (TelegramApiException e) {
             throw new RuntimeException(e);
-        }
+        }*/
     }
     @Override
     public String getBotUsername() {
-        return botName;
+        return config.getBotName();
     }
     @Override
     public String getBotToken() {
-        return botToken;
+        return config.getToken();
     }
     @Override
     public void onUpdateReceived(Update update) {

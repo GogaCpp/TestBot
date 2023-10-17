@@ -1,8 +1,7 @@
 package com.bot.testbot.config;
 
 
-import com.bot.testbot.MainBot;
-import com.bot.testbot.TestBotApplication;
+import com.bot.testbot.service.MainBot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
