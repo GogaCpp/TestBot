@@ -3,6 +3,7 @@ package com.bot.testbot.service;
 import com.bot.testbot.config.BotConfig;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.commands.SetMyCommands;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -32,7 +33,7 @@ public class MainBot extends TelegramLongPollingBot{
 
         this.config=config;
 
-        /*List<BotCommand> listOfCommands=new ArrayList<>();
+        List<BotCommand> listOfCommands=new ArrayList<>();
         listOfCommands.add(new BotCommand("/start","Старт"));
         listOfCommands.add(new BotCommand("/test","Тестирование"));
         try {
@@ -40,7 +41,7 @@ public class MainBot extends TelegramLongPollingBot{
         }
         catch (TelegramApiException e) {
             throw new RuntimeException(e);
-        }*/
+        }
     }
     @Override
     public String getBotUsername() {
