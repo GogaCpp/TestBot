@@ -14,7 +14,7 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 public class BotInitializer {
 
     @Autowired
-    MainBot bot;
+     MainBot bot;
 
     @EventListener({ContextRefreshedEvent.class})
     public void init() throws TelegramApiException{
